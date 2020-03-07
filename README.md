@@ -61,3 +61,6 @@ $ yarn seed:make <name>
 
 - copy .env.example to .env
 - create database on mysql
+
+## Open graphql
+- in browser goto localhost:3000/graphql
