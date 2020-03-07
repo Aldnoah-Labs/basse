@@ -14,10 +14,10 @@ type Person {
 }
 
 input CreatePersonInput {
-  name: String
+  name: String!
 }
 
 input UpdatePersonInput {
-  id: Int
+  id: Int!
   name: String
 }
