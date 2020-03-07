@@ -1,3 +1,4 @@
+import { UsePipes } from '@nestjs/common';
 import {
   Args,
   Mutation,
@@ -12,13 +13,20 @@ import { PeopleService } from '../people/people.service';
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
+import { DecodeIdPipe } from 'src/decode-id.pipe';
 
 @Resolver('Post')
+@UsePipes(new DecodeIdPipe(PostModel))
 export class PostsResolver {
   constructor(
     private readonly postsService: PostsService,
     private readonly peopleService: PeopleService,
   ) {}
+
+  @Query()
+  async posts(): Promise<PostModel[]> {
+    return this.postsService.findAll();
+  }
 
   @Query()
   async post(@Args('id') id: number): Promise<PostModel> {
