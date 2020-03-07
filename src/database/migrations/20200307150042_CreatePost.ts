@@ -9,7 +9,7 @@ export async function up(knex: Knex) {
     t.integer('person_id')
       .unsigned()
       .notNullable();
-    t.string('title', 20).notNullable();
+    t.string('title').notNullable();
     t.string('content').notNullable();
   });
 }
