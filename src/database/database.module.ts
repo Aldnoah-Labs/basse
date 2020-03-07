@@ -3,9 +3,10 @@ import * as Knex from 'knex';
 import { Model } from 'objection';
 import { KNEX_CONNECTION } from './constants';
 import { PersonModel } from './models/person.model';
+import { PostModel } from './models/post.model';
 import * as config from '../../knexfile';
 
-const models = [PersonModel];
+const models = [PersonModel, PostModel];
 
 const modelProviders = models.map(model => {
   return {
