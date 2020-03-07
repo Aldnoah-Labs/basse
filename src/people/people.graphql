@@ -5,7 +5,7 @@ type Query {
 type Mutation {
   createPerson(input: CreatePersonInput!): Person
   updatePerson(input: UpdatePersonInput!): Person
-  deletePerson(id: ID!): Int
+  deletePerson(id: Int!): Int
 }
 
 type Person {
