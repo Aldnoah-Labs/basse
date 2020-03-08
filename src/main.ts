@@ -5,8 +5,8 @@ import { AppModule } from './app.module';
 
 const FILE = 'plugins.json';
 
-async function resolveImport(name) {
-  return new Promise(resolve => resolve(import(`./${name}/${name}.module.js`)));
+async function resolveImport(path) {
+  return new Promise(resolve => resolve(import(path)));
 }
 
 async function getPlugins() {

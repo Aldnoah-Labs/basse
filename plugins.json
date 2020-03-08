@@ -1,6 +1,6 @@
 {
   "plugins": [{
     "name": "PostsModule",
-    "path": "posts"
+    "path": "./posts/posts.module.js"
   }]
 }
